@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+VOL=$1;
+
+echo "$(date): Saving volume $VOL"
+
+mkdir -p /dcr/vol$VOL
+cp -a $VOL /dcr/vol/$(dirname $VOL)

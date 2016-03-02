@@ -1,0 +1,1 @@
+cp -a /tmp/vol/* / && rm -rf /tmp/vol;

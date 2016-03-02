@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+VOL=$1;
+
+echo "$(date): Restoring volume $VOL"
+
+cp -a $VOL /tmp/vol/$(dirname $VOL);
