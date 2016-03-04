@@ -1,11 +1,14 @@
 FROM alpine
 MAINTAINER Alexander Ustimenko "http://ustimen.co/"
 
-# Init custom run and volumes dirs
-RUN mkdir -p /dcr/cm.d /dcr/vol
-
 # Copy tools to /usr/bin
 COPY bin/* /usr/bin/
+
+RUN \
+  # Init custom run and volumes dirs
+  mkdir -p /dcr/cm.d /dcr/vol && \
+  # Make sure copied files are executable
+  chmod +x /usr/bin/VOL*
 
 # Add hooks on before main command stage
 COPY cm.d/* /dcr/cm.d/

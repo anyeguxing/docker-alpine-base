@@ -4,4 +4,8 @@ VOL=$1;
 
 echo "$(date): Restoring volume $VOL"
 
+mkdir -p /tmp/vol
+
+cp -a /dcr/vol/$VOL /tmp/vol/$(dirname $VOL);
 cp -a $VOL /tmp/vol/$(dirname $VOL);
+cp -a /tmp/vol/$VOL $(dirname $VOL);
